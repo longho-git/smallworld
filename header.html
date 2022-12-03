@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Small World</title>
+</head>
+<style>
+    *,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+svg {
+    width: 20px;
+    height: 20px;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+:root {
+    /* định nghĩa chung */
+    --smDis: 10px;
+    --mdDis: 20px;
+    --lgDis: 30px;
+    --xlDis: 40px;
+    /* small, medium, large,Extralarge */
+    --mainColor1: #2CAFE4;
+    --subColor1: #AADFF4;
+    --subColor2: #80CFEE;
+    --subColor3: #56BFE9;
+    --subColor4: #AADFF4;
+    --subColor5: #FFFFFF;
+    --subColor6:  #232324; 
+    --subColor7:  #87878A;
+    --font1: 'Poppins', sans-serif;
+    --fontSize1: 2rem;
+    --fontSize2: 2.4rem;
+    --fontSize3: 2.8rem;
+    --fontSize4: 4rem;
+}
+
+img,
+video,
+iframe {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.padding-all {
+    padding: var(--mdDis);
+}
+
+.padding-x {
+    padding: 0 var(--mdDis);
+}
+
+.padding-y {
+    padding: var(--mdDis) 0;
+}
+
+.center-flex {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFFFFF;
+}
+
+.d-md-block,
+.d-md-flex,
+.d-lg-block {
+    display: none;
+}
+
+.max-container {
+    max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    /* bỏ lề */
+
+}
+
+body,
+input,
+button {
+    font-family: var(--font1);
+    font-size: var(--fontSize1);
+}
+
+.reset-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+/* ------- màu header */
+
+/* --------------------------------- */
+header {
+    position: sticky;
+    left: 0;
+    top: 0;
+    box-shadow: 0 3px 10px #FFFFFF opacity 16%;
+    /* viền header  */
+    background-color: #ffffff;
+    z-index: 99;
+}
+
+/*position: sticky => tự động tính  chiều cao  */
+
+/* header .header-inner{background-color: blanchedalmond;} */
+
+header .header-inner .link-logo img {
+    scale: 150%;
+    width: 100px;
+    
+}
+header .link-logo {
+    transform: translate(-50%,-50%);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+}
+header .header-inner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+/* icon giỏ hàng-------------------------- */
+header .link-gh {
+    /* background-color: rgb(16, 216, 196); */
+    margin-left: auto;
+    margin-right: 0;
+    position: relative;
+    /* thẻ cha */
+}
+/* màu icon header------------------------ */
+/* header svg {
+
+    padding: 1px;
+    fill: var(--mainColor2);
+    border: solid 1px var(--mainColor2);
+    border-radius: 2px;
+} */
+
+/* icon menu------------------------------ */
+header #btn-menu {
+    margin: 0;
+    border: none;
+    padding: 0;
+    position: relative;
+    /* background-color: #E7D690;     */
+    /* background-color: #FFFFFF; */
+    background-color: transparent;
+}
+header #btn-menu svg {width: 25px;}
+
+/* icon search */
+header #btn-search {
+    padding: 0;
+    margin-right: var(--smDis);
+    border: none;
+    position: relative;
+
+}
+header .link-icon-search {
+    display: flex; 
+    position: absolute;
+    top: 23px;
+    right: 60px;
+    /* background-color: var(--subColor4); */
+}
+header {
+    /* border: solid 0.5px rgb(148, 148, 148) ; */
+    border-radius: 0 0 20px 20px;
+    filter: drop-shadow(0 0 20px rgb(148, 148, 148));
+}
+header svg {
+    fill: var(--mainColor1);
+}
+/* navigation menu------------------- */
+header rect {
+    transform-origin: center;
+    transform-box: fill-box;
+    transition: fill 0.5s, transform 0.5s, opacity 0.5s;
+    color: #FFF;
+}
+.the-menu-2 > li {
+    padding-top: 40px;
+    padding-right: 10px;
+}
+.the-menu {
+    display: block;
+    width: 70%;
+    height: auto;
+    background-color: #56BFE9;
+    opacity: 80%;
+    position: fixed;
+    z-index: -1;
+    top: 0px;
+    left: 0;
+    clip-path: circle(0% at 50% 0);
+    transition: clip-path 0.3s;
+}
+
+.the-menu a {
+    color: var(--subColor5);/* màu chữ nav */
+    margin-bottom: var(--smDis);
+    display: block;
+    font-weight: 600;
+    font-size: var(--mdDis);
+}
+
+.show-menu .the-menu {
+    clip-path: polygon(0% 0%,50% 0%,50% 100%,0% 100%);
+    transition: clip-path 3s;
+}
+
+.show-menu header .mid {
+    opacity: 0;
+}
+
+.show-menu header .top {
+    transform: translate(0, 8px) rotate(45deg);
+    width: 25px;
+    fill: #FFF
+}
+
+.show-menu header .bot {
+    transform: translate(0, -8px) rotate(-45deg);
+    fill: #FFF
+}
+/* HOTSALE */
+.hot-sale {
+    background-color: rgb(135, 135, 138, 0.5);
+    text-align: center;
+}
+.the-menu a:hover {
+    background-color: #2CAFE4;
+    color: #FFF;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 20px;
+    /* width: max-content; */
+}
+/* -----------phan 768px--------- */
+
+@media screen and (min-width:768px) {
+    
+    /* HEADER */
+    .d-md-none {
+        display: none !important;
+    }
+
+    .d-md-block {
+        display: block !important;
+    }
+
+    .d-md-flex {
+        display: flex !important;
+    }
+
+    /* header .frm-sch {
+        width: 250px;
+        order: 2;
+        margin-left: auto;
+        margin-top: 0;
+    } */
+
+    .header-inner .link-icon-search {
+        order: 2;
+        margin-right: 50px;
+    }
+    
+    .header-inner .link-gh {
+        order: 3;
+        margin-left: var(--mdDis);
+    }
+    .header-inner .link-logo {
+        display: flex;
+        position: relative;
+        left: 70px;
+        top: 20px;   
+    }
+   /* icon header */
+  
+    /* menu ngang */
+    .the-menu {
+        background-color: var(--subColor5);
+        clip-path: none;
+        position: relative;
+        width: 100%;
+        height: 10%;
+        align-items: center;
+        display: flex;
+    }
+    .the-menu .swiper-slide {
+        justify-content: center;
+        width: 100%;
+        display: flex;
+        gap: 20px;
+    }
+    .the-menu-2 a{
+        color: #2CAFE4;
+        font-weight: 400;
+    }
+    .the-menu-2 .tab {
+        background-color: #2CAFE4;
+        padding-left: 10px;
+        padding-right: 10px;
+        border: solid 0.5px var(--mainColor1);
+        border-radius: 20px;
+    }
+}
+/* --------Ket thuc 768px-------- */
+/* --------Phan 992px--------- */
+@media screen and (min-width:992px) {
+   
+    /* HEADER */
+    .d-md-none {
+        display: none !important;
+    }
+
+    .d-md-block {
+        display: block !important;
+    }
+
+    .d-md-flex {
+        display: flex !important;
+    }
+
+    /* header .frm-sch {
+        width: 250px;
+        order: 2;
+        margin-left: auto;
+        margin-top: 0;
+    } */
+
+    .header-inner .link-icon-search {
+        order: 2;
+        margin-right: 50px;
+    }
+    
+    .header-inner .link-gh {
+        order: 3;
+        margin-left: var(--mdDis);
+    }
+    .header-inner .link-logo {
+        display: flex;
+        position: relative;
+        left: 70px;
+        top: 20px;   
+    }
+   /* icon header */
+  
+    /* menu ngang */
+    .the-menu {
+        background-color: var(--subColor5);
+        clip-path: none;
+        position: relative;
+        width: 100%;
+        height: 10%;
+        align-items: center;
+        display: flex;
+    }
+    .the-menu .swiper-slide {
+        justify-content: center;
+        width: 100%;
+        display: flex;
+        gap: 20px;
+    }
+    .the-menu-2 a{
+        color: #2CAFE4;
+        font-weight: 400;
+    }
+    .the-menu-2 .tab {
+        background-color: #2CAFE4;
+        padding-left: 10px;
+        padding-right: 10px;
+        border: solid 0.5px var(--mainColor1);
+        border-radius: 20px;
+    }
+}
+
+/* --------------Ket thuc 992px------------------------ */
+/* Phan 1200px */
+
+</style>
+<body>
+      <!-- HEADER -->
+ <header>
+    <div class="header-inner padding-all max-container">
+         <!-- logo -->
+         <a href="index.html" class="link-logo">
+            <img src="Pictures/logo.svg" alt="">
+        </a>
+         <!-- icon search -->
+      
+        <!-- icon menu -->
+    
+        <button id="btn-menu" class="d-md-none">
+            <svg>
+                <!-- <use xlink:href="symbol-defs.svg#icon-icon-menu"></use> -->
+                <rect class="top" width="15" height="3" x="0" y="1"></rect>
+                <rect class="mid" width="10" height="3" x="0" y="9"></rect>
+                <rect class="bot" width="25" height="3" x="0" y="17"></rect>
+            </svg>
+        </button>
+        <!-- icon-giỏ hàng -->
+        <a href="" class="link-gh">
+            <svg>
+                <use xlink:href="symbol-defs.svg#icon-icon-bag-2"></use>
+            </svg>
+        </a>
+    </div>
+    
+    <nav class="the-menu  d-md-block  padding-all">
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <ul class="the-menu-2  reset-list swiper-slide padding-all">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a class="tab" href="list-products-collection.html" style="color: white;">New Arrival</a></li>
+                    <li><a href="list-products-boys-page.html">Boy</a></li>
+                    <li><a href="list-products-girls-page.html">Girl</a></li>
+                    <li><a href="list-products-baby-page.html">Baby</a></li>
+                    <li><a href="list-products-toys-page.html">Toys</a></li>
+                    <li><a href="list-products-sale-page.html">Sale</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header> 
+    <!-- HOT SALE -->
+    <div class = "hot-sale">
+        <p>
+            BUY 2 GET 1 FREE - APPLY TO ALL PRODUCTS
+        </p>
+    </div>
+</body>
+<!-- SCRIPT -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script>
+     document.getElementById(`btn-menu`).addEventListener(`click`, () => {
+        document.body.classList.toggle(`show-menu`);
+    })
+    // menu swiper ======== 
+    const menuSwiper = new Swiper('.the-menu > .swiper', {
+        slidesPerView: `auto`
+    })  
+  
+    const spdxSwiper = new Swiper('.spdx', {
+            spaceBetween: 10,
+            slidesPerView: 1,
+        });
+       
+</script>
+</html>

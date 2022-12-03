@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Small World</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="style-shopping.css">
+</head>
+<body>
+<!-- HEADER -->
+<header>
+    <div class="header-inner padding-all max-container">
+         <!-- logo -->
+         <a href="index.html" class="link-logo">
+            <img src="Pictures/logo.svg" alt="">
+        </a>
+         <!-- icon search -->
+        <a href="" class="link-icon-search">
+        <svg>
+            <use xlink:href="symbol-defs.svg#icon-icon-search"></use>
+        </svg>
+    </a>
+        <!-- icon menu -->
+    
+        <button id="btn-menu" class="d-md-none">
+            <svg>
+                <!-- <use xlink:href="symbol-defs.svg#icon-icon-menu"></use> -->
+                <rect class="top" width="15" height="3" x="0" y="1"></rect>
+                <rect class="mid" width="10" height="3" x="0" y="9"></rect>
+                <rect class="bot" width="25" height="3" x="0" y="17"></rect>
+            </svg>
+        </button>
+        <!-- icon-giỏ hàng -->
+        <a href="shopping-cart-page.html" class="link-gh">
+            <svg>
+                <use xlink:href="symbol-defs.svg#icon-icon-bag-2"></use>
+            </svg>
+        </a>
+    </div>
+    <nav class="the-menu  d-md-block  padding-all">
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <ul class="the-menu-2  reset-list swiper-slide padding-all">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="list-products-collection.html">New Arrival</a></li>
+                    <li><a href="list-products-boys-page.html">Boy</a></li>
+                    <li><a href="list-products-girls-page.html">Girl</a></li>
+                    <li><a href="list-products-baby-page.html">Baby</a></li>
+                    <li><a href="list-products-toys-page.html">Toys</a></li>
+                    <li><a href="list-products-sale-page.html">Sale</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header> 
+<!-- CONTACT -->
+<!-- <section class=" contact-us padding-all max-container">
+<h1 style="color:#2CAFE4 ;text-align: center;">CONTACT US</h1>
+<form class=" padding-all max-container reset-list" action="">
+    <li> 
+    <span >Name*</span>
+    <br>
+    <input type="text">
+</li>
+<li>
+    <span>Email*</span>
+    <input type="email">
+</li>
+<li>
+    <span>Phone*</span>
+    <input type="phonenumber">
+</li>
+<li>
+    <span>Note</span>
+    <input style="padding-top:50px ;" type="text">
+</li>
+</form>
+<button type="submit" class="btn-send max-container">
+    <a href="" style="color: var(--mainColor1);">SEND</a>
+</button>
+</section> -->
+<!-- SHOPPING CART -->
+   <!-- Title -->
+<div class="title center-flex">
+    SHOPPING CART
+</div>
+<div class="shopping-cart max-container padding-all">
+    <!-- Sản phẩm #0 -->
+    <div class="item">
+        <div class="buttons">
+            <button class="btn-x center-flex" style="border: solid 0.5px #2CAFE4;border-radius:20px;width: 25px;height: 25px;background-color: white;padding-top: 8px;">
+                <use>
+                    <svg style= "fill: #2CAFE4;padding:0;;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/></svg>
+                </use>
+            </button>
+            <button class="btn-heart center-flex" style="border: solid 0.5px #2CAFE4;border-radius:20px;width: 25px;height: 25px;background-color: white;">
+                                
+                <svg style= "fill: #2CAFE4;padding:0;scale: 120%;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/></svg>
+        </button>
+        </div>
+      <div class="image">
+        <img src="Pictures/Imgtrangboys/boy5.png" alt="" />
+      </div>
+      <div class="description">
+        <span>Green Short</span>
+        <span>12M</span>
+      </div>  
+      <div class="quantity">
+        <button class="btn-minus" style="border: none;background-color: white;width: 25px;height: 25px;"  type="button" name="button">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg>
+        </button>
+        <input type="text" name="name" value="1">
+        <button class="btn-plus" style="border: none;background-color: white;width: 25px;height: 25px;"type="button" name="button">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
+        </button>
+      </div>
+      <p style="text-align: center;color: dimgrey;">Total</p>
+      <a class="total-price" >420.00$</a>
+</div>
+    <!-- Product #1 -->
+    <div class="item">
+        <div class="buttons">
+            <button class="btn-x center-flex" style="border: solid 0.5px #2CAFE4;border-radius:20px;width: 25px;height: 25px;background-color: white;padding-top: 8px;">
+                <use>
+                    <svg style= "fill: #2CAFE4;padding:0;;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/></svg>
+                </use>
+            </button>
+            <button class="btn-heart center-flex" style="border: solid 0.5px #2CAFE4;border-radius:20px;width: 25px;height: 25px;background-color: white;">
+                                
+                <svg style= "fill: #2CAFE4;padding:0;scale: 120%;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/></svg>
+        </button>
+        </div>
+      <div class="image">
+        <img src="Pictures/Imgtrangboys/boy-8.png" alt="" />
+      </div>
+      <div class="description">
+        <span>Winter Jacket</span>
+        <span>24M</span>
+      </div>  
+      <div class="quantity">
+        <button class="btn-minus" style="border: none;background-color: white;width: 25px;height: 25px;"  type="button" name="button">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg>
+        </button>
+        <input type="text" name="name" value="1">
+        <button class="btn-plus" style="border: none;background-color: white;width: 25px;height: 25px;"type="button" name="button">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
+        </button>
+      </div>
+      <p style="text-align: center;color: dimgrey;">Total</p>
+      <a class="total-price" >420.00$</a>
+</div>
+    <!-- Product #2 -->
+    <div class="item">
+        <div class="buttons">
+            <button class="btn-x center-flex" style="border: solid 0.5px #2CAFE4;border-radius:20px;width: 25px;height: 25px;background-color: white;padding-top: 8px;">
+                <use>
+                    <svg style= "fill: #2CAFE4;padding:0;;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/></svg>
+                </use>
+            </button>
+            <button class="btn-heart center-flex" style="border: solid 0.5px #2CAFE4;border-radius:20px;width: 25px;height: 25px;background-color: white;">
+                                
+                <svg style= "fill: #2CAFE4;padding:0;scale: 120%;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/></svg>   
+        </button> 
+        </div>
+      <div class="image">
+        <img src="Pictures/Imgtranggirls/girl-10.png" alt="" />
+      </div>
+   
+      <div class="description">
+        <span>Yellow Jacket</span>
+        <span>24M</span>
+      </div>
+    <!-- SỐ LƯỢNG -->
+      <div class="quantity">
+        <button class="btn-minus" style="border: none;background-color: white;width: 25px;height: 25px;"  type="button" name="button">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg>
+        </button>
+        <input type="text" name="name" value="1">
+        <button class="btn-plus" style="border: none;background-color: white;width: 25px;height: 25px;"type="button" name="button">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
+        </button>
+      </div>
+      <p style="text-align: center;color: dimgrey;">Total</p>
+      <a class="total-price" >420.00$</a>
+    </div>
+    <!-- Product #3 -->
+<div class="item">
+    <div class="buttons">
+        <button class="btn-x center-flex" style="border: solid 0.5px #2CAFE4;border-radius:20px;width: 25px;height: 25px;background-color: white;padding-top: 8px;">
+            <use>
+                <svg style= "fill: #2CAFE4;padding:0;;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/></svg>
+            </use>
+        </button>
+        <button class="btn-heart center-flex" style="border: solid 0.5px #2CAFE4;border-radius:20px;width: 25px;height: 25px;background-color: white;">
+                            
+            <svg style= "fill: #2CAFE4;padding:0;scale: 120%;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/></svg>     
+    </button>    
+    </div>
+  <div class="image">
+
+    <img src="Pictures/Imgtrangnewborn/baby-6.png" alt="" />
+
+  </div>
+  <div class="description">
+    <span>Blue Dress</span>
+    <span>3M</span>
+  </div>
+  <div class="quantity">
+        <button class="btn-minus" style="border: none;background-color: white;width: 25px;height: 25px;"  type="button" name="button">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/></svg>
+        </button>
+        <input type="text" name="name" value="1">
+        <button class="btn-plus" style="border: none;background-color: white;width: 25px;height: 25px;"type="button" name="button">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
+        </button>
+  </div>
+        <p style="text-align: center;color: dimgrey;">Total</p>
+        <a class="total-price">420.00$</a>
+    </div>
+
+</div>
+
+   
+    <!-- NUT CHECK OUT -->
+    <div class="pay-all padding-all max-container">
+        <hr style="height:5px;border-width:0;
+            border-radius: 5px;width: 60%;opacity: 70%;
+        background-color:darkgray">
+        <h3 style="text-align: center;color: darkgray;">SUB TOTAL</h3>
+        <h4 style="text-align: center;color: darkgray;" >4 items</h4>
+
+        <div class="he-nut">
+            <button type="button" class="btn-add raise center-flex">
+                <a href style="color: white; font-size: var(--fontSize1);background-color:none;">CHECK OUT</a>
+            </button>
+        </div>
+
+    </div>
+
+<!-- FOOTER -->
+<footer>
+    <hr style="height:5px;border-width:0;
+border-radius: 5px;width: 60%;opacity: 70%;
+background-color:var(--mainColor1)">
+    <div class="footer-inner padding-all max-container">
+        <div class="sign-up">
+            <h1 style="color: var(--mainColor1);font-size: var(--fontSize3);">SIGN UP TO GET 10% OFF</h1> 
+        <form action="" class="frm-sign-up">
+            <input type="search" placeholder="YOUR EMAIL" >
+            <button type="submit" class="center-flex">
+                <a href="" style="color: var(--subColor5);"> SUBSCRIBE</a>
+            </button>
+        </form>
+        </div>
+        <ul class="service-footer reset-list footer-menu">
+        <ul class="about-us     reset-list">
+            <a href="about-us.html" style="font-size: var(--fontSize2);font-weight: bold;color:var(--mainColor1);";>About Us</a>
+            <li><a href="" style="color:var(--mainColor1)">Our Brand</a></li> <!-- thêm href -->
+            <li><a href="" style="color:var(--mainColor1)">Careers</a></li>
+            <li><a href="" style="color:var(--mainColor1)">Blog</a></li>
+        </ul>
+
+        <ul class="customer-care    reset-list">
+            <a href="" style="font-size: var(--fontSize2);font-weight: bold;color:var(--mainColor1)">Customer Care</a>
+            <li><a href="contact.html" style="color:var(--mainColor1)">Contacts</a></li>
+            <li><a href="" style="color:var(--mainColor1)">FAQs</a></li>
+            <li><a href="" style="color:var(--mainColor1)">Privacy policy</a></li>
+            </a>
+        </ul>
+        </ul>
+           
+        <ul class="reset-list social-links padding-all">
+            <li>
+                <a href="">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <svg>
+                        <use xlink:href="symbol-defs.svg#icon-icon-insta"></use>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <svg>
+                        <use xlink:href="symbol-defs.svg#icon-icon-twitter"></use>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </div> 
+
+    <a class="copyright" href="" style="color: #2CAFE4;font-size: 80%;">    <p class="">
+        Hotline: (0967)-420-420
+        <br>
+        Address: 6317 Bayswater Trl
+        <br>
+        Raleigh, North Carolina(NC), 27612 </p> <p>© 2022 SmallWorld Inc. All rights reserved </p></a>
+</footer>
+<script>
+ 
+       
+    //-----nut tang, giam
+    let boDiv = document.querySelectorAll(`.quantity`);
+    boDiv.forEach(b=> {
+        let oSo = b.querySelector(`input`);
+        b.querySelectorAll(`button`).forEach(a => a.addEventListener(`click`,(e)=>{
+            let n = parseInt(oSo.value);
+            if (e.currentTarget.classList.contains(`btn-plus`)) {
+                n++;
+            }
+            else {
+                n--;
+            }
+            if (n<=1) n =1;
+            oSo.value = n;
+        }))
+    })
+
+    document.getElementById(`btn-menu`).addEventListener(`click`, () => {
+        document.body.classList.toggle(`show-menu`);
+    })
+    // menu swiper ======== 
+    const menuSwiper = new Swiper('.the-menu > .swiper', {
+        slidesPerView: `auto`
+    })  
+  
+    const spdxSwiper = new Swiper('.spdx', {
+            spaceBetween: 10,
+            slidesPerView: 1,
+        });
+</script>
+</body>
+</html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Small World</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+svg {
+    width: 20px;
+    height: 20px;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+:root {
+    /* định nghĩa chung */
+    --smDis: 10px;
+    --mdDis: 20px;
+    --lgDis: 30px;
+    --xlDis: 40px;
+    /* small, medium, large,Extralarge */
+    --mainColor1: #2CAFE4;
+    --subColor1: #AADFF4;
+    --subColor2: #80CFEE;
+    --subColor3: #56BFE9;
+    --subColor4: #AADFF4;
+    --subColor5: #FFFFFF;
+    --subColor6:  #232324; 
+    --subColor7:  #87878A;
+    --font1: 'Poppins', sans-serif;
+    --fontSize1: 2rem;
+    --fontSize2: 2.4rem;
+    --fontSize3: 2.8rem;
+    --fontSize4: 4rem;
+}
+
+img,
+video,
+iframe {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.padding-all {
+    padding: var(--mdDis);
+}
+
+.padding-x {
+    padding: 0 var(--mdDis);
+}
+
+.padding-y {
+    padding: var(--mdDis) 0;
+}
+
+.center-flex {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFFFFF;
+}
+
+.d-md-block,
+.d-md-flex,
+.d-lg-block {
+    display: none;
+}
+
+.max-container {
+    max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    /* bỏ lề */
+
+}
+
+body,
+input,
+button {
+    font-family: var(--font1);
+    font-size: var(--fontSize1);
+}
+
+.reset-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+} 
+ /* PRODUCT */
+    .products ul li {
+            /* background-color: var(--subColor4); */
+            border: solid 1px var(--subColor1);
+            margin-bottom: var(--mdDis); 
+            border-radius: 40px;           
+        }
+        .products li > a {
+            display: block;
+            /* background-color: #232324; */
+            height: 260px;  
+        }
+       
+        .hinh-anh img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; 
+        }
+      
+        .products{
+            position: relative;   
+            
+        }
+        .products-name{
+            text-align: center;
+            font-size: 3.5rem;
+            padding:25px;
+            margin: 0;
+            color: var(--mainColor1);
+        }
+
+        /* BUTTON */
+        .he-nut{
+            display: block;
+            
+        }
+        .he-nut > button {
+            margin: 30px;
+        }
+        .he-nut {
+            background-color: var(--mainColor1);
+            border-radius: 0 0 40px 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-style: none;
+            padding: 0;
+            /* padding-top:10px ; */
+            
+        }
+        .he-nut .btn-add {
+            border: solid 1px var(--subColor2);
+            background-color: var(--subColor5);
+            border-radius: 30px;
+            gap: 10px;
+            width: 200px;
+            height: 50px;
+        }
+        .btn-add a{
+            gap: 10px;
+        }
+         /* Tag sale */
+         .products-label {position: relative;}
+        .products-label::before { /* => TẠO HÌNH VUÔNG */
+            content: attr(data-label);
+            position: absolute;
+            background-color: var(--mainColor1);
+            color: #FFF;
+            width: 80px;
+            height: 40px;
+            /* padding: var(--smDis) var(--mdDis); */
+            right: 0;
+            top: 45%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px 0 0 20px;
+        }
+        /* --------------------Phần 768px------------------------ */
+    @media screen and (min-width:768px){
+              /* PRODUCT */
+              .products ul {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: var(--mdDis); /*  khoảng cách giữa các product*/
+            }
+            .products ul li {margin-bottom: 0;}
+        
+    }
+    @media screen and (min-width:992px){
+            
+            header .frm-sch {width: 350px;}
+           
+            /* PRODUCT */
+            .products ul {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 50px; 
+                 /*  khoảng cách giữa các product*/
+            }
+            .products li > a {
+            display: block;
+            /* background-color: #1717b3; */
+            height: 180px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <!-- PRODUCTS -->
+    <section class="products padding-all max-container">
+        <ul class="reset-list">
+            <!-- SANPHAM-1 -->
+            <li class="products-label" data-label=" 420 $">
+                <h1 class="products-name" style="font-weight: 600";>Jean Shirt</h1>
+                <a href="" class="hinh-anh">
+                    <img src="Pictures/Imgtrangsanpham/camera-gb11c4e41e_1920.png" alt="" >
+                </a>
+                <div class="he-nut">
+                        <button type="button" class="btn-add center-flex">
+                            <svg style="fill: var(--mainColor1);" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M24 0C10.7 0 0 10.7 0 24S10.7 48 24 48H76.1l60.3 316.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24-10.7 24-24s-10.7-24-24-24H179.9l-9.1-48h317c14.3 0 26.9-9.5 30.8-23.3l54-192C578.3 52.3 563 32 541.8 32H122l-2.4-12.5C117.4 8.2 107.5 0 96 0H24zM176 512c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm336-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48z"/></svg>
+                            <a href style="color: #2CAFE4; font-size: var(--fontSize1);">Add to Cart</a>
+                        </button>
+                </div>
+            </li>
+            <!-- SANPHAM-2 -->
+            <li class="products-label" data-label=" 420 $">
+                <h1 class="products-name" style="font-weight: 600";>Jean Shirt</h1>
+                <a href="" class="hinh-anh  ">
+                    <img src="Pictures/Imgtrangsanpham/camera-gb11c4e41e_1920.png" alt="" >
+                </a>
+                <div class="he-nut">
+                        <button type="button" class="btn-add center-flex">
+                            <svg style="fill: var(--mainColor1);" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M24 0C10.7 0 0 10.7 0 24S10.7 48 24 48H76.1l60.3 316.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24-10.7 24-24s-10.7-24-24-24H179.9l-9.1-48h317c14.3 0 26.9-9.5 30.8-23.3l54-192C578.3 52.3 563 32 541.8 32H122l-2.4-12.5C117.4 8.2 107.5 0 96 0H24zM176 512c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm336-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48z"/></svg>
+                            <a href style="color: #2CAFE4; font-size: var(--fontSize1);">Add to Cart</a>
+                        </button>
+                </div>
+            </li>
+            <!-- SANPHAM-3 -->
+            <li class="products-label" data-label=" 420 $">
+                <h1 class="products-name" style="font-weight: 600";>Jean Shirt</h1>
+                <a href="" class="hinh-anh  ">
+                    <img src="Pictures/Imgtrangsanpham/camera-gb11c4e41e_1920.png" alt="" >
+                </a>
+                <div class="he-nut">
+                        <button type="button" class="btn-add center-flex">
+                            <svg style="fill: var(--mainColor1);" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M24 0C10.7 0 0 10.7 0 24S10.7 48 24 48H76.1l60.3 316.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24-10.7 24-24s-10.7-24-24-24H179.9l-9.1-48h317c14.3 0 26.9-9.5 30.8-23.3l54-192C578.3 52.3 563 32 541.8 32H122l-2.4-12.5C117.4 8.2 107.5 0 96 0H24zM176 512c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm336-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48z"/></svg>
+                            <a href style="color: #2CAFE4; font-size: var(--fontSize1);">Add to Cart</a>
+                        </button>
+                </div>
+            </li>
+             <!-- SANPHAM-4 -->
+             <li class="products-label" data-label=" 420 $">
+                <h1 class="products-name" style="font-weight: 600";>Jean Shirt</h1>
+                <a href="" class="hinh-anh  ">
+                    <img src="Pictures/Imgtrangsanpham/camera-gb11c4e41e_1920.png" alt="" >
+                </a>
+                <div class="he-nut">
+                        <button type="button" class="btn-add center-flex">
+                            <svg style="fill: var(--mainColor1);" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M24 0C10.7 0 0 10.7 0 24S10.7 48 24 48H76.1l60.3 316.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24-10.7 24-24s-10.7-24-24-24H179.9l-9.1-48h317c14.3 0 26.9-9.5 30.8-23.3l54-192C578.3 52.3 563 32 541.8 32H122l-2.4-12.5C117.4 8.2 107.5 0 96 0H24zM176 512c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm336-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48z"/></svg>
+                            <a href style="color: #2CAFE4; font-size: var(--fontSize1);">Add to Cart</a>
+                        </button>
+                </div>
+            </li>
+             <!-- SANPHAM-5 -->
+             <li class="products-label" data-label=" 420 $">
+                <h1 class="products-name" style="font-weight: 600";>Jean Shirt</h1>
+                <a href="" class="hinh-anh  ">
+                    <img src="Pictures/Imgtrangsanpham/camera-gb11c4e41e_1920.png" alt="" >
+                </a>
+                <div class="he-nut">
+                        <button type="button" class="btn-add center-flex">
+                            <svg style="fill: var(--mainColor1);" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M24 0C10.7 0 0 10.7 0 24S10.7 48 24 48H76.1l60.3 316.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24-10.7 24-24s-10.7-24-24-24H179.9l-9.1-48h317c14.3 0 26.9-9.5 30.8-23.3l54-192C578.3 52.3 563 32 541.8 32H122l-2.4-12.5C117.4 8.2 107.5 0 96 0H24zM176 512c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm336-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48z"/></svg>
+                            <a href style="color: #2CAFE4; font-size: var(--fontSize1);">Add to Cart</a>
+                        </button>
+                </div>
+            </li>
+             <!-- SANPHAM-6 -->
+             <li class="products-label" data-label=" 420 $">
+                <h1 class="products-name" style="font-weight: 600";>Jean Shirt</h1>
+                <a href="" class="hinh-anh  ">
+                    <img src="Pictures/Imgtrangsanpham/camera-gb11c4e41e_1920.png" alt="" >
+                </a>
+                <div class="he-nut">
+                        <button type="button" class="btn-add center-flex">
+                            <svg style="fill: var(--mainColor1);" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M24 0C10.7 0 0 10.7 0 24S10.7 48 24 48H76.1l60.3 316.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24-10.7 24-24s-10.7-24-24-24H179.9l-9.1-48h317c14.3 0 26.9-9.5 30.8-23.3l54-192C578.3 52.3 563 32 541.8 32H122l-2.4-12.5C117.4 8.2 107.5 0 96 0H24zM176 512c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm336-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48z"/></svg>
+                            <a href style="color: #2CAFE4; font-size: var(--fontSize1);">Add to Cart</a>
+                        </button>
+                </div>
+            </li>
+             <!-- SANPHAM-7 -->
+             <li class="products-label" data-label=" 420 $">
+                <h1 class="products-name" style="font-weight: 600";>Jean Shirt</h1>
+                <a href="" class="hinh-anh  ">
+                    <img src="Pictures/Imgtrangsanpham/camera-gb11c4e41e_1920.png" alt="" >
+                </a>
+                <div class="he-nut">
+                        <button type="button" class="btn-add center-flex">
+                            <svg style="fill: var(--mainColor1);" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M24 0C10.7 0 0 10.7 0 24S10.7 48 24 48H76.1l60.3 316.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24-10.7 24-24s-10.7-24-24-24H179.9l-9.1-48h317c14.3 0 26.9-9.5 30.8-23.3l54-192C578.3 52.3 563 32 541.8 32H122l-2.4-12.5C117.4 8.2 107.5 0 96 0H24zM176 512c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm336-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48z"/></svg>
+                            <a href style="color: #2CAFE4; font-size: var(--fontSize1);">Add to Cart</a>
+                        </button>
+                </div>
+            </li>
+             <!-- SANPHAM-8 -->
+             <li class="products-label" data-label=" 420 $">
+                <h1 class="products-name" style="font-weight: 600";>Jean Shirt</h1>
+                <a href="" class="hinh-anh  ">
+                    <img src="Pictures/Imgtrangsanpham/camera-gb11c4e41e_1920.png" alt="" >
+                </a>
+                <div class="he-nut">
+                        <button type="button" class="btn-add center-flex">
+                            <svg style="fill: var(--mainColor1);" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M24 0C10.7 0 0 10.7 0 24S10.7 48 24 48H76.1l60.3 316.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24-10.7 24-24s-10.7-24-24-24H179.9l-9.1-48h317c14.3 0 26.9-9.5 30.8-23.3l54-192C578.3 52.3 563 32 541.8 32H122l-2.4-12.5C117.4 8.2 107.5 0 96 0H24zM176 512c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm336-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48z"/></svg>
+                            <a href style="color: #2CAFE4; font-size: var(--fontSize1);">Add to Cart</a>
+                        </button>
+                </div>
+            </li>
+             <!-- SANPHAM-9 -->
+             <li class="products-label" data-label=" 420 $">
+                <h1 class="products-name" style="font-weight: 600";>Jean Shirt</h1>
+                <a href="" class="hinh-anh  ">
+                    <img src="Pictures/Imgtrangsanpham/camera-gb11c4e41e_1920.png" alt="" >
+                </a>
+                <div class="he-nut">
+                        <button type="button" class="btn-add center-flex">
+                            <svg style="fill: var(--mainColor1);" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M24 0C10.7 0 0 10.7 0 24S10.7 48 24 48H76.1l60.3 316.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24-10.7 24-24s-10.7-24-24-24H179.9l-9.1-48h317c14.3 0 26.9-9.5 30.8-23.3l54-192C578.3 52.3 563 32 541.8 32H122l-2.4-12.5C117.4 8.2 107.5 0 96 0H24zM176 512c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm336-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48z"/></svg>
+                            <a href style="color: #2CAFE4; font-size: var(--fontSize1);">Add to Cart</a>
+                        </button>
+                </div>
+            </li>
+        </ul>
+    </section>
+</body>
+</html>

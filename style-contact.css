@@ -1,0 +1,5 @@
+@media screen and (min-width:992px) {
+   .contact-us {display: grid; grid-template-columns:2fr 3fr; gap: var(--mdDis);}
+   .contact-us h1 {grid-column: span 2;}
+   .contact-us form {width: 100%;}
+}

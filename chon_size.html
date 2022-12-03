@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Small World</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+svg {
+    width: 20px;
+    height: 20px;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+:root {
+    /* định nghĩa chung */
+    --smDis: 10px;
+    --mdDis: 20px;
+    --lgDis: 30px;
+    --xlDis: 40px;
+    /* small, medium, large,Extralarge */
+    --mainColor1: #2CAFE4;
+    --subColor1: #AADFF4;
+    --subColor2: #80CFEE;
+    --subColor3: #56BFE9;
+    --subColor4: #AADFF4;
+    --subColor5: #FFFFFF;
+    --subColor6:  #232324; 
+    --subColor7:  #87878A;
+    --font1: 'Poppins', sans-serif;
+    --fontSize1: 2rem;
+    --fontSize2: 2.4rem;
+    --fontSize3: 2.8rem;
+    --fontSize4: 4rem;
+}
+
+img,
+video,
+iframe {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.padding-all {
+    padding: var(--mdDis);
+}
+
+.padding-x {
+    padding: 0 var(--mdDis);
+}
+
+.padding-y {
+    padding: var(--mdDis) 0;
+}
+
+.center-flex {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFFFFF;
+}
+
+.d-md-block,
+.d-md-flex,
+.d-lg-block {
+    display: none;
+}
+
+.max-container {
+    max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    /* bỏ lề */
+
+}
+
+body,
+input,
+button {
+    font-family: var(--font1);
+    font-size: var(--fontSize1);
+}
+
+.reset-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+} 
+.lua-chon {border-radius: 30px;
+   background-color: var(--mainColor1); color:#fff;
+   padding: 0  40px; border:none; position: relative; width: fit-content;
+}
+.lua-chon-ds {display: none;}
+.lua-chon svg {fill:#FFF; position: absolute;
+   right: 5px; top:50%; transform: translate(0,-50%);
+}
+.detail-item {display: flex; gap: 10px}
+.lua-chon-ds  {margin-top: 10px;}
+.lua-chon-ds li {background-color: palegoldenrod; padding: 10px;}
+.lua-chon-ds li:hover {background-color: #56BFE9;}
+</style>
+<body>
+   <section class="padding-all  detail-item">
+      <span>Size: </span>
+      <div >
+         <button class="lua-chon" type="button" id="btn-size">
+            <span>24M</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M137.4 41.4c12.5-12.5 32.8-12.5 45.3 0l128 128c9.2 9.2 11.9 22.9 6.9 34.9s-16.6 19.8-29.6 19.8H32c-12.9 0-24.6-7.8-29.6-19.8s-2.2-25.7 6.9-34.9l128-128zm0 429.3l-128-128c-9.2-9.2-11.9-22.9-6.9-34.9s16.6-19.8 29.6-19.8H288c12.9 0 24.6 7.8 29.6 19.8s2.2 25.7-6.9 34.9l-128 128c-12.5 12.5-32.8 12.5-45.3 0z"/></svg>
+         </button>
+         <ul class="reset-list lua-chon-ds">
+            <li>1 Year</li>
+            <li>2 Years</li>
+            <li>3 Years</li>
+         </ul>
+      </div> 
+   </section>
+   <script>
+      let btnSize = document.getElementById(`btn-size`);
+      let ds = btnSize.nextElementSibling; 
+      btnSize.addEventListener(`click`,(e)=> {
+         if ( ds.style.display === `none`) {
+            ds.style.display = `block`;
+         }
+         else {
+            ds.style.display = `none`;
+         }
+      })
+      ///////////////////////
+      let boList = document.querySelectorAll(`.lua-chon-ds  li`);
+      boList.forEach(b => b.addEventListener(`click`,(e)=> {
+         let s = e.currentTarget.innerHTML; 
+         btnSize.querySelector(`span`).innerHTML = s; 
+         ds.style.display = `none`;
+      }))
+   </script>    
+</body>
+</html>

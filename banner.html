@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Small World</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+svg {
+    width: 20px;
+    height: 20px;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+:root {
+    /* định nghĩa chung */
+    --smDis: 10px;
+    --mdDis: 20px;
+    --lgDis: 30px;
+    --xlDis: 40px;
+    /* small, medium, large,Extralarge */
+    --mainColor1: #2CAFE4;
+    --subColor1: #AADFF4;
+    --subColor2: #80CFEE;
+    --subColor3: #56BFE9;
+    --subColor4: #AADFF4;
+    --subColor5: #FFFFFF;
+    --subColor6:  #232324; 
+    --subColor7:  #87878A;
+    --font1: 'Poppins', sans-serif;
+    --fontSize1: 2rem;
+    --fontSize2: 2.4rem;
+    --fontSize3: 2.8rem;
+    --fontSize4: 4rem;
+}
+
+img,
+video,
+iframe {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.padding-all {
+    padding: var(--mdDis);
+}
+
+.padding-x {
+    padding: 0 var(--mdDis);
+}
+
+.padding-y {
+    padding: var(--mdDis) 0;
+}
+
+.center-flex {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFFFFF;
+}
+
+.d-md-block,
+.d-md-flex,
+.d-lg-block {
+    display: none;
+}
+
+.max-container {
+    max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    /* bỏ lề */
+
+}
+
+body,
+input,
+button {
+    font-family: var(--font1);
+    font-size: var(--fontSize1);
+}
+
+.reset-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+} 
+/* BANNER */
+.banner .swiper-slide {
+    border-radius: 2px;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+}
+
+.banner .b1 {
+    background-image: url(Pictures/Imgtrangsanpham/interior-kids-room-decoration-with-clothes.jpg);
+}
+
+.banner .b2 {
+    background-image: url(Pictures/Imgtrangsanpham/banner-with-surprised-children-peeking-edge.jpg);
+    
+}
+
+.banner .b3 {
+    background-image: url(Pictures/Imgtrangsanpham/18220838_v1015-101a.jpg);
+}
+
+/* bỏ nút tròn */
+
+.banner-pagination {
+    position: static;
+    background-color: transparent;
+}
+
+.banner-review .banner-pagination .swiper-pagination-bullet {
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    margin-left: 20px;
+}
+.swiper-button-prev {
+    color: var(--subColor7);
+}
+.swiper-button-next{
+    color: var(--subColor7);
+}
+
+</style>
+<body>
+    <!-- BANNER -->
+    <section class="banner-review   max-container">
+        <div class="banner   swiper">
+            <div class="swiper-button-prev">
+                <svg>
+                    <use xlink:href="symbol-defs.svg#icon-icon-arrow-left"></use>
+                </svg>
+            </div>
+            <div class="swiper-wrapper">    
+                <div class="swiper-slide b1"></div>
+                <div class="swiper-slide b2"></div>
+                <div class="swiper-slide b3"></div>
+        </div>
+        <div class="swiper-button-next">
+            <svg>
+                <use xlink:href="symbol-defs.svg#icon-icon-arrow-right"></use>
+            </svg>
+        </div>
+    </div>
+    <!-- SCRIPT -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+        // BANNER
+        const bannerSwiper = new Swiper(`.banner`, {
+            navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+            autoplay: {
+                delay: 2000,
+            },
+        });
+    </script>
+</body>
+</html>

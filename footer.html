@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Small World</title>
+    
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+svg {
+    width: 20px;
+    height: 20px;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+:root {
+    /* định nghĩa chung */
+    --smDis: 10px;
+    --mdDis: 20px;
+    --lgDis: 30px;
+    --xlDis: 40px;
+    /* small, medium, large,Extralarge */
+    --mainColor1: #2CAFE4;
+    --subColor1: #AADFF4;
+    --subColor2: #80CFEE;
+    --subColor3: #56BFE9;
+    --subColor4: #AADFF4;
+    --subColor5: #FFFFFF;
+    --subColor6:  #232324; 
+    --subColor7:  #87878A;
+    --font1: 'Poppins', sans-serif;
+    --fontSize1: 2rem;
+    --fontSize2: 2.4rem;
+    --fontSize3: 2.8rem;
+    --fontSize4: 4rem;
+}
+
+img,
+video,
+iframe {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.padding-all {
+    padding: var(--mdDis);
+}
+
+.padding-x {
+    padding: 0 var(--mdDis);
+}
+
+.padding-y {
+    padding: var(--mdDis) 0;
+}
+
+.center-flex {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFFFFF;
+}
+
+.d-md-block,
+.d-md-flex,
+.d-lg-block {
+    display: none;
+}
+
+.max-container {
+    max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    /* bỏ lề */
+
+}
+
+body,
+input,
+button {
+    font-family: var(--font1);
+    font-size: var(--fontSize1);
+}
+
+.reset-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+} 
+/* FORM SIGNUP-FOOTER--------------------------- */
+footer {
+    /* border: solid 1px ; */
+    text-align: center;
+    align-items: center;
+    position: relative;
+}
+.frm-sign-up {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,0);
+}
+.footer-inner .frm-sign-up {
+    /* background-color: sienna; */
+    /* border-radius: 4px; */
+    margin-top: var(--mdDis);
+    width: 80%;
+    position: relative;
+    /* cha */
+    color: var(--mainColor1);
+    top: 0;
+}
+
+footer .frm-sign-up button {
+    position: absolute;
+    /* con */
+    display: flex;
+    right: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    border: none;
+    border-radius: 0 30px 30px 0;
+    background-color: var(--mainColor1);
+    padding: 10px;
+    justify-content: center;
+}
+footer .frm-sign-up input {
+    padding: var(--smDis) var(--xlDis) var(--smDis) var(--smDis);
+    border: solid 1px var(--subColor1); 
+    border-radius: 30px;
+    width: 100%;
+    align-items: center; 
+}
+
+input::placeholder {
+  
+    color: var(--mainColor1);
+}
+
+footer .service-footer {
+    height:165px;
+    display: grid;
+    grid-template-columns:1fr 1fr ;
+    background-color: #aadff48a;
+    border-radius: 30px;
+    justify-content: center;
+}
+.service-footer{
+    position: relative;
+    margin-top: 50px;
+}
+.footer-inner{
+    /* background-color: #56BFE9; */
+    position: relative;
+}
+.footer-inner .social-links{
+    display: flex;
+    position: absolute;
+    gap: var(--mdDis);
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding-top: 20px;
+}
+.footer-inner .copyright{
+    display: flex;
+    position: absolute;
+    gap: var(--mdDis);
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+footer .social-links svg {
+    opacity: 80%;
+}
+footer .copyright p {
+    /* background-color: #87878A; */
+    padding-top: 10px;
+}
+.about-us  {
+    position: absolute;
+    left:20px;
+    top: 20px;
+}
+.customer-care {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+.social-links svg {
+    fill: #2CAFE4;
+}
+/* -----------phan 768px--------- */
+
+@media screen and (min-width:768px) {
+   /* FOOTER */
+   .footer-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /*  hoặc 2fr 3fr */
+    gap: var(--smDis);
+}
+
+.footer-menu {
+    margin-top: 0;
+}
+.footer-inner {
+    /* background-color: #AADFF4; */
+    position: relative;
+}
+.footer-inner .sign-up {
+    position: absolute;
+    /* background-color: #56BFE9; */
+   right: 0;
+   padding-top: 20px;
+   padding-right: 30px;
+
+
+}
+.social-links svg {
+    fill: #2CAFE4;
+}
+
+/* => icon qua phải  */
+
+/* .company-info {
+    justify-self: end;
+} */
+.welcome {
+    width: 70%;
+}
+.footer-inner .logo-footer{
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    margin-top: 50px;
+   
+}
+.footer-inner .frm-sign-up {
+    /* background-color: #56BFE9; */
+    width: 90%;  
+}
+
+}
+/* --------Ket thuc 768px-------- */
+/* --------Phan 992px--------- */
+@media screen and (min-width:992px) {
+          /* FOOTER */
+ .footer-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /*  hoặc 2fr 3fr */
+    gap: var(--smDis);
+}
+
+.footer-menu {
+    margin-top: 0;
+}
+.footer-inner {
+    /* background-color: #AADFF4; */
+    position: relative;
+    padding: 50px;
+}
+.footer-inner .sign-up {
+    position: absolute;
+    /* background-color: #56BFE9; */
+   right: 0;
+   padding-top: 50px;
+   padding-right: 70px;
+}
+.social-links svg {
+    fill: #2CAFE4;
+}
+
+.footer-inner .frm-sign-up {
+    /* background-color: #56BFE9; */
+    width: 90%;  
+}
+.welcome {
+    width: 70%;
+}
+.footer-inner .logo-footer{
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    margin-top: 50px;
+   
+}
+    .products-sell {
+        width: 80%;
+    }
+    .products-sell .sp-sell a{
+        gap: 10px;
+    }
+}
+/* --------------Ket thuc 992px-- */
+</style>
+<body>
+    <footer>
+        <hr style="height:5px;border-width:0;
+    border-radius: 5px;width: 60%;opacity: 70%;
+    background-color:var(--mainColor1)">
+        <div class="footer-inner padding-all max-container">
+            <div class="sign-up">
+                <h1 style="color: var(--mainColor1);font-size: var(--fontSize3);">SIGN UP TO GET 10% OFF</h1> 
+            <form action="" class="frm-sign-up">
+                <input type="search" placeholder="YOUR EMAIL" >
+                <button type="submit" class="center-flex">
+                    <a href="" style="color: var(--subColor5);"> SUBSCRIBE</a>
+                </button>
+            </form>
+            </div>
+            <ul class="service-footer reset-list footer-menu">
+            <ul class="about-us     reset-list">
+                <a href="" style="font-size: var(--fontSize2);font-weight: bold;color:var(--mainColor1);";>About Us</a>
+                <li><a href="" style="color:var(--mainColor1)">Our Brand</a></li> <!-- thêm href -->
+                <li><a href="" style="color:var(--mainColor1)">Careers</a></li>
+                <li><a href="" style="color:var(--mainColor1)">Blog</a></li>
+            </ul>
+    
+            <ul class="customer-care    reset-list">
+                <a href="" style="font-size: var(--fontSize2);font-weight: bold;color:var(--mainColor1)">Customer Care</a>
+                <li><a href="" style="color:var(--mainColor1)">Contacts</a></li>
+                <li><a href="" style="color:var(--mainColor1)">FAQs</a></li>
+                <li><a href="" style="color:var(--mainColor1)">Privacy policy</a></li>
+                </a>
+            </ul>
+            </ul>
+               
+            <ul class="reset-list social-links padding-all">
+                <li>
+                    <a href="">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <svg>
+                            <use xlink:href="symbol-defs.svg#icon-icon-insta"></use>
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <svg>
+                            <use xlink:href="symbol-defs.svg#icon-icon-twitter"></use>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </div> 
+    
+        <a class="copyright" href="" style="color: #2CAFE4;font-size: 80%;">     <p class="">
+            Hotline: (0967)-420-420
+            <br>
+            Address: 6317 Bayswater Trl
+            <br>
+            Raleigh, North Carolina(NC), 27612 </p><p>© 2022 SmallWorld Inc. All rights reserved </p></a>
+     
+    </footer>
+</body>
+</html>

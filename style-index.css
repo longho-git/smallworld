@@ -374,7 +374,7 @@ header rect {
     position: relative;
 }
 .khung-products-home {
-    scale: 90%;
+    transform: scale(90%);
     position: inherit;
     /* width: 400px;
     height: 400px; */
